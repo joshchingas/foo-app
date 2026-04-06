@@ -240,6 +240,7 @@ const SearchPage = ({ onSelectProduct }) => {
       {/* Header */}
       <header className="border-b border-gray-300 bg-white relative overflow-hidden" style={{ minHeight: '160px' }}>
         {PIXEL_FOODS.map((item, i) => (
+<<<<<<< HEAD
           <div
             key={i}
             className="absolute select-none pointer-events-none"
