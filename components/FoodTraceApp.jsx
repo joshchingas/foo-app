@@ -193,24 +193,24 @@ const ProductPage = ({ product, onBack }) => {
 // Row 0 (y=0): orange, pear, pineapple, watermelon-slice, apple, banana, cherry, watermelon, lemon, coconut, kiwi
 // Row 1 (y=8): dragon-fruit-slice, plum, blueberry, mango, dragon-fruit, lime, grapes, peach, strawberry
 const PIXEL_FOODS = [
-  // Far left column — hugs the edge
-  { sx: 32,  sy: 0,  top: '-22%', left: '2%'  },  // apple        — above header
-  { sx: 80,  sy: 0,  top: '18%',  left: '2%'  },  // kiwi
-  { sx: 48,  sy: 0,  top: '52%',  left: '2%'  },  // cherry
-  { sx: 0,   sy: 0,  top: '88%',  left: '2%'  },  // orange
-  // Inner left column
-  { sx: 16,  sy: 0,  top: '-12%', left: '15%' },  // pineapple    — above header
-  { sx: 64,  sy: 0,  top: '38%',  left: '14%' },  // lemon
-  { sx: 48,  sy: 8,  top: '110%', left: '15%' },  // grapes       — below header
-  // Far right column — hugs the edge
-  { sx: 24,  sy: 0,  top: '-22%', left: '93%' },  // watermelon   — above header
-  { sx: 40,  sy: 0,  top: '18%',  left: '93%' },  // banana
-  { sx: 0,   sy: 8,  top: '52%',  left: '93%' },  // dragon fruit
-  { sx: 56,  sy: 8,  top: '88%',  left: '93%' },  // peach
-  // Inner right column
-  { sx: 64,  sy: 8,  top: '-12%', left: '81%' },  // strawberry   — above header
-  { sx: 40,  sy: 8,  top: '38%',  left: '81%' },  // lime
-  { sx: 8,   sy: 0,  top: '110%', left: '82%' },  // pear         — below header
+  // Left outer column
+  { sx: 32,  sy: 0,  top: '6%',  left: '2%'  },  // apple
+  { sx: 48,  sy: 0,  top: '44%', left: '2%'  },  // cherry
+  { sx: 0,   sy: 0,  top: '76%', left: '2%'  },  // orange
+  // Left inner column
+  { sx: 80,  sy: 0,  top: '12%', left: '13%' },  // kiwi
+  { sx: 64,  sy: 0,  top: '50%', left: '13%' },  // lemon
+  { sx: 16,  sy: 0,  top: '76%', left: '13%' },  // pineapple
+  { sx: 48,  sy: 8,  top: '28%', left: '8%'  },  // grapes       — staggered between columns
+  // Right inner column
+  { sx: 64,  sy: 8,  top: '12%', left: '83%' },  // strawberry
+  { sx: 40,  sy: 8,  top: '50%', left: '83%' },  // lime
+  { sx: 56,  sy: 8,  top: '76%', left: '83%' },  // peach
+  { sx: 8,   sy: 0,  top: '28%', left: '88%' },  // pear         — staggered between columns
+  // Right outer column
+  { sx: 24,  sy: 0,  top: '6%',  left: '93%' },  // watermelon
+  { sx: 40,  sy: 0,  top: '44%', left: '93%' },  // banana
+  { sx: 0,   sy: 8,  top: '76%', left: '93%' },  // dragon fruit
 ];
 
 // Search page component
@@ -240,7 +240,7 @@ const SearchPage = ({ onSelectProduct }) => {
   return (
     <div className="min-h-screen bg-gray-50 font-mono">
       {/* Header */}
-      <header className="border-b border-gray-300 bg-white relative overflow-visible" style={{ minHeight: '160px' }}>
+      <header className="border-b border-gray-300 bg-white relative overflow-hidden" style={{ minHeight: '160px' }}>
         {PIXEL_FOODS.map((item, i) => (
           <div
             key={i}
