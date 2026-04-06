@@ -192,22 +192,18 @@ const ProductPage = ({ product, onBack }) => {
 // Sprite sheet: 88x32px, each sprite 8x8px, 11 cols x 4 rows
 // Row 0 (y=0): orange, pear, pineapple, watermelon-slice, apple, banana, cherry, watermelon, lemon, coconut, kiwi
 // Row 1 (y=8): dragon-fruit-slice, plum, blueberry, mango, dragon-fruit, lime, grapes, peach, strawberry
+// Sprite scale: 3.5x → 28×28px per fruit. 10 fruits fit cleanly in a flex row on mobile.
 const PIXEL_FOODS = [
-  // All fruits in a single row along the bottom of the header (~7% spacing)
-  { sx: 32,  sy: 0,  top: '58%', left: '1%'  },  // apple
-  { sx: 48,  sy: 0,  top: '58%', left: '8%'  },  // cherry
-  { sx: 80,  sy: 0,  top: '58%', left: '15%' },  // kiwi
-  { sx: 0,   sy: 0,  top: '58%', left: '22%' },  // orange
-  { sx: 16,  sy: 0,  top: '58%', left: '29%' },  // pineapple
-  { sx: 64,  sy: 0,  top: '58%', left: '36%' },  // lemon
-  { sx: 48,  sy: 8,  top: '58%', left: '43%' },  // grapes
-  { sx: 24,  sy: 0,  top: '58%', left: '50%' },  // watermelon
-  { sx: 40,  sy: 0,  top: '58%', left: '57%' },  // banana
-  { sx: 8,   sy: 0,  top: '58%', left: '64%' },  // pear
-  { sx: 64,  sy: 8,  top: '58%', left: '71%' },  // strawberry
-  { sx: 56,  sy: 8,  top: '58%', left: '78%' },  // peach
-  { sx: 40,  sy: 8,  top: '58%', left: '85%' },  // lime
-  { sx: 0,   sy: 8,  top: '58%', left: '93%' },  // dragon fruit
+  { sx: 32, sy: 0 },  // apple
+  { sx: 48, sy: 0 },  // cherry
+  { sx: 80, sy: 0 },  // kiwi
+  { sx: 0,  sy: 0 },  // orange
+  { sx: 16, sy: 0 },  // pineapple
+  { sx: 64, sy: 0 },  // lemon
+  { sx: 40, sy: 0 },  // banana
+  { sx: 8,  sy: 0 },  // pear
+  { sx: 64, sy: 8 },  // strawberry
+  { sx: 56, sy: 8 },  // peach
 ];
 
 // Search page component
@@ -237,29 +233,27 @@ const SearchPage = ({ onSelectProduct }) => {
   return (
     <div className="min-h-screen bg-gray-50 font-mono">
       {/* Header */}
-      <header className="border-b border-gray-300 bg-white relative overflow-hidden" style={{ minHeight: '160px' }}>
-        {PIXEL_FOODS.map((item, i) => (
-          <div
-            key={i}
-            className="absolute select-none pointer-events-none"
-            style={{
-              top: item.top,
-              left: item.left,
-              width: '8px',
-              height: '8px',
-              backgroundImage: 'url(/FruitAndVeg.png)',
-              backgroundPosition: `-${item.sx}px -${item.sy}px`,
-              backgroundRepeat: 'no-repeat',
-              imageRendering: 'pixelated',
-              transform: 'scale(3.5)',
-              transformOrigin: 'top left',
-              opacity: 0.85,
-            }}
-          />
-        ))}
-        <div className="relative z-10 max-w-2xl mx-auto px-6 py-8 text-center">
+      <header className="border-b border-gray-300 bg-white overflow-hidden" style={{ minHeight: '160px' }}>
+        <div className="max-w-2xl mx-auto px-6 py-8 text-center">
           <h1 className="text-3xl font-normal tracking-tight mb-2">FOO</h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest">Supply Chain Intelligence</p>
+        </div>
+        <div className="flex justify-between px-3 pb-3 select-none pointer-events-none">
+          {PIXEL_FOODS.map((item, i) => (
+            <div
+              key={i}
+              style={{
+                width: '28px',
+                height: '28px',
+                backgroundImage: 'url(/FruitAndVeg.png)',
+                backgroundPosition: `-${item.sx * 3.5}px -${item.sy * 3.5}px`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: '308px 112px',
+                imageRendering: 'pixelated',
+                opacity: 0.85,
+              }}
+            />
+          ))}
         </div>
       </header>
       
