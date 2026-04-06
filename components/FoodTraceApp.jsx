@@ -189,18 +189,43 @@ const ProductPage = ({ product, onBack }) => {
   );
 };
 
+const PIXEL_FOODS = [
+  { emoji: '🍓', top: '8%',  left: '4%'  },
+  { emoji: '🍉', top: '5%',  left: '18%' },
+  { emoji: '🥑', top: '12%', left: '32%' },
+  { emoji: '🍋', top: '6%',  left: '52%' },
+  { emoji: '🍌', top: '10%', left: '68%' },
+  { emoji: '🥝', top: '7%',  left: '82%' },
+  { emoji: '🍒', top: '7%',  left: '93%' },
+  { emoji: '🍍', top: '55%', left: '3%'  },
+  { emoji: '🍎', top: '60%', left: '17%' },
+  { emoji: '🍐', top: '58%', left: '35%' },
+  { emoji: '🍊', top: '62%', left: '55%' },
+  { emoji: '🍇', top: '57%', left: '72%' },
+  { emoji: '🥕', top: '28%', left: '2%'  },
+  { emoji: '🥦', top: '38%', left: '91%' },
+  { emoji: '🌽', top: '72%', left: '88%' },
+  { emoji: '🥒', top: '80%', left: '10%' },
+  { emoji: '🍅', top: '82%', left: '45%' },
+  { emoji: '🧅', top: '25%', left: '88%' },
+  { emoji: '🥔', top: '78%', left: '65%' },
+  { emoji: '🌶️', top: '42%', left: '48%' },
+  { emoji: '🍆', top: '18%', left: '75%' },
+  { emoji: '🎃', top: '45%', left: '22%' },
+];
+
 // Search page component
 const SearchPage = ({ onSelectProduct }) => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
   const [hasSearched, setHasSearched] = useState(false);
-  
+
   const handleSearch = () => {
     if (!query.trim()) return;
-    
+
     setHasSearched(true);
     const q = query.toLowerCase();
-    const matches = PRODUCTS_DB.filter(p => 
+    const matches = PRODUCTS_DB.filter(p =>
       p.name.toLowerCase().includes(q) ||
       p.brand.toLowerCase().includes(q) ||
       p.upc.includes(q) ||
@@ -208,16 +233,25 @@ const SearchPage = ({ onSelectProduct }) => {
     );
     setResults(matches);
   };
-  
+
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') handleSearch();
   };
-  
+
   return (
     <div className="min-h-screen bg-gray-50 font-mono">
       {/* Header */}
-      <header className="border-b border-gray-300 bg-white">
-        <div className="max-w-2xl mx-auto px-6 py-8 text-center">
+      <header className="border-b border-gray-300 bg-white relative overflow-hidden" style={{ minHeight: '160px' }}>
+        {PIXEL_FOODS.map((item, i) => (
+          <span
+            key={i}
+            className="absolute select-none pointer-events-none"
+            style={{ top: item.top, left: item.left, fontSize: '2rem', opacity: 0.55 }}
+          >
+            {item.emoji}
+          </span>
+        ))}
+        <div className="relative z-10 max-w-2xl mx-auto px-6 py-8 text-center">
           <h1 className="text-3xl font-normal tracking-tight mb-2">FOO</h1>
           <p className="text-sm text-gray-500 uppercase tracking-widest">Supply Chain Intelligence</p>
         </div>
