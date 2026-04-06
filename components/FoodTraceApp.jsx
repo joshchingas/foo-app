@@ -194,21 +194,21 @@ const ProductPage = ({ product, onBack }) => {
 // Row 1 (y=8): dragon-fruit-slice, plum, blueberry, mango, dragon-fruit, lime, grapes, peach, strawberry
 const PIXEL_FOODS = [
   // Left side — well spaced, clear of center text
-  { sx: 32,  sy: 0,  top: '8%',  left: '1%'  },  // apple
-  { sx: 48,  sy: 0,  top: '55%', left: '2%'  },  // cherry
-  { sx: 80,  sy: 0,  top: '25%', left: '6%'  },  // kiwi
-  { sx: 0,   sy: 0,  top: '75%', left: '4%'  },  // orange
-  { sx: 16,  sy: 0,  top: '42%', left: '13%' },  // pineapple
-  { sx: 64,  sy: 0,  top: '10%', left: '16%' },  // lemon
-  { sx: 48,  sy: 8,  top: '70%', left: '18%' },  // grapes
+  { sx: 32,  sy: 0,  top: '5%',  left: '2%'  },  // apple
+  { sx: 48,  sy: 0,  top: '50%', left: '3%'  },  // cherry
+  { sx: 80,  sy: 0,  top: '28%', left: '8%'  },  // kiwi
+  { sx: 0,   sy: 0,  top: '78%', left: '5%'  },  // orange
+  { sx: 16,  sy: 0,  top: '45%', left: '17%' },  // pineapple
+  { sx: 64,  sy: 0,  top: '12%', left: '21%' },  // lemon
+  { sx: 48,  sy: 8,  top: '65%', left: '23%' },  // grapes
   // Right side — well spaced, clear of center text
-  { sx: 40,  sy: 0,  top: '12%', left: '82%' },  // banana
-  { sx: 8,   sy: 0,  top: '60%', left: '80%' },  // pear
-  { sx: 64,  sy: 8,  top: '30%', left: '87%' },  // strawberry
-  { sx: 56,  sy: 8,  top: '72%', left: '86%' },  // peach
-  { sx: 24,  sy: 0,  top: '8%',  left: '92%' },  // watermelon slice
-  { sx: 40,  sy: 8,  top: '50%', left: '94%' },  // lime
-  { sx: 0,   sy: 8,  top: '78%', left: '91%' },  // dragon fruit
+  { sx: 40,  sy: 0,  top: '10%', left: '76%' },  // banana
+  { sx: 8,   sy: 0,  top: '55%', left: '74%' },  // pear
+  { sx: 64,  sy: 8,  top: '30%', left: '85%' },  // strawberry
+  { sx: 56,  sy: 8,  top: '70%', left: '84%' },  // peach
+  { sx: 24,  sy: 0,  top: '5%',  left: '91%' },  // watermelon slice
+  { sx: 40,  sy: 8,  top: '48%', left: '94%' },  // lime
+  { sx: 0,   sy: 8,  top: '80%', left: '92%' },  // dragon fruit
 ];
 
 // Search page component
@@ -252,7 +252,7 @@ const SearchPage = ({ onSelectProduct }) => {
               backgroundPosition: `-${item.sx}px -${item.sy}px`,
               backgroundRepeat: 'no-repeat',
               imageRendering: 'pixelated',
-              transform: 'scale(5)',
+              transform: 'scale(3.5)',
               transformOrigin: 'top left',
               opacity: 0.85,
             }}
