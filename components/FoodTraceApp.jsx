@@ -333,7 +333,7 @@ const SearchPage = ({ onSelectProduct }) => {
           <div className="mt-12 text-center">
             <p className="text-xs uppercase tracking-widest text-gray-400 mb-4">Try Searching</p>
             <div className="flex flex-wrap justify-center gap-2">
-              {['salmon', 'honey', 'yogurt'].map(term => (
+              {['salmon'].map(term => (
                 <button
                   key={term}
                   onClick={() => { setQuery(term); }}
