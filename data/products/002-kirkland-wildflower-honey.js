@@ -110,5 +110,5 @@ export default {
       source: "https://www.mashed.com/2135397/where-costco-kirkland-signature-honey-comes-from/"
     }
   ],
-  finalComments: "[ Kirkland Raw Honey passes the test of minimal to no additives. Upon further research on Local Hive & Bee Maid Honey, only treatment would be pasturization which reduces nutrient density. But additives are highly unlikely for this product, just some warming and cooling. Food alteration highest at step 2. ]"
+  finalComments: "Kirkland Raw Honey passes the test of minimal to no additives. Upon further research on Local Hive & Bee Maid Honey, only treatment would be pasturization which reduces nutrient density. But additives are highly unlikely for this product, just some warming and cooling. Food alteration highest at step 2."
 };
