@@ -4,7 +4,7 @@
 // To add a new product, copy an existing product object and modify it.
 // Each product needs: id, name, brand, category, upc, description, and steps array.
 // Each step needs: order, type, title, location, company, details, confidence, source
-// Optional: commentary array and additives array
+// Optional: commentary array, additives array, finalComments (string)
 // =============================================================================
 
 export const PRODUCTS_DB = [
@@ -71,6 +71,7 @@ export const PRODUCTS_DB = [
         confidence: "confirmed",
         source: "Retail records"
       }
-    ]
+    ],
+    finalComments: ""
   },
 ];

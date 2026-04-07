@@ -99,7 +99,6 @@ const SupplyChainStep = ({ step, isLast }) => {
 
 // Product page component
 const ProductPage = ({ product, onBack }) => {
-  const [finalComments, setFinalComments] = useState("");
 
   return (
     <div className="min-h-screen bg-gray-50 font-mono">
@@ -184,13 +183,8 @@ const ProductPage = ({ product, onBack }) => {
           <div className="border-b border-gray-300 px-4 py-3 bg-gray-50">
             <span className="font-mono text-sm uppercase tracking-wider font-bold">Final Comments</span>
           </div>
-          <div className="p-4">
-            <textarea
-              value={finalComments}
-              onChange={(e) => setFinalComments(e.target.value)}
-              placeholder="Add your summary or commentary here..."
-              className="w-full font-mono text-sm border border-gray-200 p-3 focus:outline-none focus:border-gray-500 resize-y min-h-[120px]"
-            />
+          <div className="p-4 font-mono text-sm text-gray-700 whitespace-pre-wrap min-h-[80px]">
+            {product.finalComments || <span className="text-gray-400 italic">No final comments.</span>}
           </div>
         </div>
 
