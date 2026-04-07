@@ -8,8 +8,10 @@
 
 import wildAlaskanSockeyeSalmon from "./products/001-wild-alaskan-sockeye-salmon.js";
 import kirklandWildflowerHoney from "./products/002-kirkland-wildflower-honey.js";
+import wildArgentineRedShrimp from "./products/003-wild-argentine-red-shrimp.js";
 
 export const PRODUCTS_DB = [
   wildAlaskanSockeyeSalmon,
   kirklandWildflowerHoney,
+  wildArgentineRedShrimp,
 ];
