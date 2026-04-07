@@ -99,6 +99,8 @@ const SupplyChainStep = ({ step, isLast }) => {
 
 // Product page component
 const ProductPage = ({ product, onBack }) => {
+  const [finalComments, setFinalComments] = useState("");
+
   return (
     <div className="min-h-screen bg-gray-50 font-mono">
       {/* Header */}
@@ -140,6 +142,11 @@ const ProductPage = ({ product, onBack }) => {
           )}
         </div>
         
+        {/* Quick nav hint */}
+        <div className="mb-3 text-xs text-gray-500 italic">
+          For quick summary, go to <span className="font-bold not-italic uppercase tracking-wide">Final Comments</span> at bottom
+        </div>
+
         {/* Confidence legend */}
         <div className="mb-6 p-4 border border-gray-200 bg-white text-xs">
           <span className="uppercase tracking-wider text-gray-500 font-bold block mb-3">Confidence Key</span>
@@ -172,6 +179,21 @@ const ProductPage = ({ product, onBack }) => {
           ))}
         </div>
         
+        {/* Final Comments */}
+        <div className="mt-8 border border-gray-400 bg-white">
+          <div className="border-b border-gray-300 px-4 py-3 bg-gray-50">
+            <span className="font-mono text-sm uppercase tracking-wider font-bold">Final Comments</span>
+          </div>
+          <div className="p-4">
+            <textarea
+              value={finalComments}
+              onChange={(e) => setFinalComments(e.target.value)}
+              placeholder="Add your summary or commentary here..."
+              className="w-full font-mono text-sm border border-gray-200 p-3 focus:outline-none focus:border-gray-500 resize-y min-h-[120px]"
+            />
+          </div>
+        </div>
+
         {/* Footer note */}
         <div className="mt-8 p-4 border border-dashed border-gray-300 text-xs text-gray-500">
           <p className="uppercase tracking-wider mb-2 font-bold">About This Record</p>
